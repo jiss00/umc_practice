@@ -7,6 +7,9 @@ import umc.spring.study.apiPayload.ApiResponse;
 import umc.spring.study.service.TempService.TempQueryService;
 import umc.spring.study.web.Dto.TempResponse;
 
+/**
+ * 인증입니다.
+ */
 
 @RestController
 @RequestMapping("/temp")
