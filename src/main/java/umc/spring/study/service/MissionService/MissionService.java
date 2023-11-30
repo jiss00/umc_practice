@@ -22,10 +22,11 @@ public class MissionService {
     private final MemberMissionRepository memberMissionRepository;
 
     @Transactional
-    public Mission createMission(Long storeId, StoreRequestDTO.MissionDTO request){
+    public Long createMission(Long storeId, StoreRequestDTO.MissionDTO request){
         Mission mission = StoreConverter.saveMission(request);
         mission.setStore(storeRepository.findById(storeId).get());
-        return missionRepository.save(mission);
+        missionRepository.save(mission);
+        return mission.getId();
     }
     @Transactional
     public MemberMission setMymission(Mission mission, Member member){
